@@ -18,3 +18,66 @@ nav ul li a {
     text-decoration: none;
     color: #333;
 }
+
+.custom-button {
+    position: relative;
+    background-color: #333; /* neutral-800 */
+    color: #f8f8f2; /* gray-50 */
+    padding: 12px 36px;
+    font-size: 16px; /* text-base */
+    font-weight: bold; /* font-bold */
+    border-radius: 12px; /* rounded-lg */
+    border: none;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    text-align: left;
+    width: 256px; /* Adjust width as necessary */
+    height: 64px; /* Adjust height as necessary */
+}
+
+.custom-button::before, .custom-button::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    opacity: 0;
+    z-index: 0;
+}
+
+.custom-button::before {
+    background-color: #9a4dce; /* violet-500 */
+    width: 48px; /* Adjust size as necessary */
+    height: 48px; /* Adjust size as necessary */
+    top: 1px; /* Adjust position as necessary */
+    right: 1px; /* Adjust position as necessary */
+    filter: blur(8px);
+}
+
+.custom-button::after {
+    background-color: #fb7185; /* rose-300 */
+    width: 80px; /* Adjust size as necessary */
+    height: 80px; /* Adjust size as necessary */
+    top: 3px; /* Adjust position as necessary */
+    right: 8px; /* Adjust position as necessary */
+    filter: blur(12px);
+}
+
+.custom-button:hover {
+    border-color: #fb7185; /* rose-300 */
+    color: #fb7185; /* text-rose-300 */
+    text-decoration: underline;
+}
+
+.custom-button:hover::before, .custom-button:hover::after {
+    opacity: 1;
+}
+
+.custom-button:hover::before {
+    right: 12px;
+    bottom: 8px;
+    filter: blur(12px);
+}
+
+.custom-button:hover::after {
+    right: -8px;
+}
