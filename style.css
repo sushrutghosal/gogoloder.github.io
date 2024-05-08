@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 body {
     font-family: Arial, sans-serif;
 }
@@ -19,65 +24,120 @@ nav ul li a {
     color: #333;
 }
 
-.custom-button {
+.animated-button {
     position: relative;
-    background-color: #333; /* neutral-800 */
-    color: #f8f8f2; /* gray-50 */
-    padding: 12px 36px;
-    font-size: 16px; /* text-base */
-    font-weight: bold; /* font-bold */
-    border-radius: 12px; /* rounded-lg */
-    border: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 36px;
+    border: 4px solid;
+    border-color: transparent;
+    font-size: 16px;
+    background-color: inherit;
+    border-radius: 100px;
+    font-weight: 600;
+    color: greenyellow;
+    box-shadow: 0 0 0 2px greenyellow;
+    cursor: pointer;
     overflow: hidden;
-    transition: all 0.5s ease;
-    text-align: left;
-    width: 256px; /* Adjust width as necessary */
-    height: 64px; /* Adjust height as necessary */
-}
-
-.custom-button::before, .custom-button::after {
-    content: '';
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button svg {
     position: absolute;
+    width: 24px;
+    fill: greenyellow;
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button .arr-1 {
+    right: 16px;
+  }
+  
+  .animated-button .arr-2 {
+    left: -25%;
+  }
+  
+  .animated-button .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: greenyellow;
     border-radius: 50%;
-    transition: all 0.5s ease;
     opacity: 0;
-    z-index: 0;
-}
-
-.custom-button::before {
-    background-color: #9a4dce; /* violet-500 */
-    width: 48px; /* Adjust size as necessary */
-    height: 48px; /* Adjust size as necessary */
-    top: 1px; /* Adjust position as necessary */
-    right: 1px; /* Adjust position as necessary */
-    filter: blur(8px);
-}
-
-.custom-button::after {
-    background-color: #fb7185; /* rose-300 */
-    width: 80px; /* Adjust size as necessary */
-    height: 80px; /* Adjust size as necessary */
-    top: 3px; /* Adjust position as necessary */
-    right: 8px; /* Adjust position as necessary */
-    filter: blur(12px);
-}
-
-.custom-button:hover {
-    border-color: #fb7185; /* rose-300 */
-    color: #fb7185; /* text-rose-300 */
-    text-decoration: underline;
-}
-
-.custom-button:hover::before, .custom-button:hover::after {
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button .text {
+    position: relative;
+    z-index: 1;
+    transform: translateX(-12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: #212121;
+    border-radius: 12px;
+  }
+  
+  .animated-button:hover .arr-1 {
+    right: -25%;
+  }
+  
+  .animated-button:hover .arr-2 {
+    left: 16px;
+  }
+  
+  .animated-button:hover .text {
+    transform: translateX(12px);
+  }
+  
+  .animated-button:hover svg {
+    fill: #212121;
+  }
+  
+  .animated-button:active {
+    scale: 0.95;
+    box-shadow: 0 0 0 4px greenyellow;
+  }
+  
+  .animated-button:hover .circle {
+    width: 220px;
+    height: 220px;
     opacity: 1;
+  }
+
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #0a2e38, #000000); /* Dark blue gradient for the entire page */
+    color: white; /* Ensures text visibility */
+    font-family: 'Arial', sans-serif;
 }
 
-.custom-button:hover::before {
-    right: 12px;
-    bottom: 8px;
-    filter: blur(12px);
+.header-gradient {
+    background: linear-gradient(to right, #0a2e38, #000000); /* Aesthetic gradient for the header */
+    padding: 20px 0;
+    text-align: center;
 }
 
-.custom-button:hover::after {
-    right: -8px;
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centers the navigation horizontally */
 }
+
+li {
+    margin: 0 10px;
+}
+
+
+  
