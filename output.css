@@ -1,4 +1,4 @@
-/* Basic reset for styling */
+/* General Resets */
 
 * {
   margin: 0;
@@ -9,92 +9,75 @@
 body, html {
   width: 100%;
   height: 100%;
-  font-family: 'Arial', sans-serif;
-  background: #FFF9E6;
-  /* soft yellow background, as previously liked */
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #FFD700 50%, #FFF9E6 50%);
   color: #333;
-  /* general text color */
+  /* General text color */
   scroll-behavior: smooth;
-  /* smooth scrolling */
 }
 
-header {
-  background: linear-gradient(145deg, #FFD700, #FFA500);
-  /* gradient from yellow to a deep orange */
+/* Navbar */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #FFD700;
+  /* Updated to match new color scheme */
   color: white;
   text-align: center;
   padding: 20px 0;
-  position: sticky;
-  /* Ensures the header stays at the top of the viewport */
-  top: 0;
   z-index: 1000;
-  width: 100%;
-  /* Full width */
+  transition: background-color 0.5s ease;
 }
 
-.header-title {
-  text-align: center;
-  font-size: 2.5em;
-  /* Big, noticeable font size */
-  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
-  /* Fun, casual font */
-  color: #084c84;
-  /* Deep blue for the title */
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-  /* Text shadow for depth */
-  padding: 10px 0;
-  /* Space above and below the title */
-}
-
-nav ul {
-  list-style: none;
+.navbar nav ul {
+  list-style-type: none;
   display: flex;
   justify-content: center;
   padding: 0;
-  /* Removes default padding */
 }
 
-nav ul li {
-  margin: 0 20px;
-}
-
-nav ul li a {
+.navbar nav ul li a {
   text-decoration: none;
   color: white;
-  font-weight: bold;
-  transition: color 0.3s;
+  padding: 10px 20px;
+  font-size: 1.2em;
 }
 
-nav ul li a:hover,
-nav ul li a:focus {
-  color: #FFFAF0;
-  /* lighter shade of yellow for hover/focus */
-}
+/* Full Screen Sections */
 
-section {
-  min-height: 100vh;
+.full-screen, main section {
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 40px 20px;
-  border-bottom: 5px solid #FFD700;
-  /* vivid yellow border to separate sections */
+  justify-content: center;
+  text-align: center;
+  padding: 50px 20px;
 }
+
+.center-content, .card {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  /* Background for card */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Footer */
 
 footer {
-  background: #1E90FF;
-  /* vivid blue, removed from large sections if not desired */
-  color: white;
-  padding: 10px 0;
   text-align: center;
+  padding: 20px;
+  background-color: #333;
+  /* Footer background color */
+  color: white;
 }
 
-/* Adding subtle shadows to the header and footer for depth */
-
-header, footer {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
+/* Decorative Elements and Animations */
 
 @keyframes zoomOut {
   from {
@@ -112,7 +95,6 @@ header, footer {
   from {
     opacity: 0;
     transform: translateX(100vw) scale(0.5);
-    /* Starts from right and zoomed out */
   }
 
   to {
@@ -121,20 +103,10 @@ header, footer {
   }
 }
 
-/* Applying animations to sections */
-
-section {
-  animation: zoomIn 0.5s ease-out forwards;
-  /* Adjust timing as needed */
-}
-
 .decorative-line {
   height: 2px;
   background-color: #64ffda;
   /* Vibrant green line */
   width: 100%;
-  /* Full width */
   margin: 20px 0;
 }
-
-
