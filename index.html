@@ -4,89 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^3.0/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"> <!-- Make sure this file includes the styles for your animated buttons -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <header class="header-gradient">
+    <header>
+        <div class="header-title">
+            Sushrut Ghosal's Portfolio
+        </div>
         <nav>
             <ul>
-                <li>
-                    <button class="animated-button" onclick="location.href='about.html'">
-                        <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                          ></path>
-                        </svg>
-                        <span class="text">About Me</span>
-                        <span class="circle"></span>
-                        <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                          ></path>
-                        </svg>
-                      </button>
-                </li>
-                <li>
-                    <button class="animated-button" onclick="location.href='achievements.html'">
-                        <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                          ></path>
-                        </svg>
-                        <span class="text">Achievements</span>
-                        <span class="circle"></span>
-                        <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                          ></path>
-                        </svg>
-                      </button>
-                </li>
-                <li>
-                    <button class="animated-button" onclick="location.href='experience.html'">
-                        <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                          ></path>
-                        </svg>
-                        <span class="text">Experiences</span>
-                        <span class="circle"></span>
-                        <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                          ></path>
-                        </svg>
-                      </button>
-                </li>
-                <li>
-                    <button class="animated-button" onclick="location.href='education.html'">
-                        <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                          ></path>
-                        </svg>
-                        <span class="text">Education</span>
-                        <span class="circle"></span>
-                        <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                          ></path>
-                        </svg>
-                      </button>
-                </li>
+                <li><a href="#about" onclick="scrollToSection('about')">About Me</a></li>
+                <li><a href="#experiences" onclick="scrollToSection('experiences')">Experiences</a></li>
+                <li><a href="#projects" onclick="scrollToSection('projects')">Projects</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <h1>Welcome to My Portfolio</h1>
-        <p>This is a brief introduction to my professional world.</p>
+        <section id="about">About Me...</section>
+        <section id="experiences">Experiences...</section>
+        <section id="projects">Projects...</section>
+        
     </main>
-    <footer class="header-gradient">
-        <p>Contact me at: <a href="mailto:sghosal@asu.edu">sghosal@asu.edu</a></p>
-    </footer>
-
-    <!-- Ensure your JavaScript is included at the end of the body for better page load performance -->
-    <script src="script.js"></script> <!-- If you are using any JavaScript -->
+    <footer>Your footer content</footer>
 </body>
 </html>

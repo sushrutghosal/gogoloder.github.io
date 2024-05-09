@@ -1,143 +1,118 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
-body {
-    font-family: Arial, sans-serif;
-}
-header, footer {
-    background-color: #f1f1f1;
-    padding: 10px 20px;
-    text-align: center;
-}
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-nav ul li {
-    display: inline;
-    margin-right: 10px;
-}
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-}
-
-.animated-button {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    padding: 16px 36px;
-    border: 4px solid;
-    border-color: transparent;
-    font-size: 16px;
-    background-color: inherit;
-    border-radius: 100px;
-    font-weight: 600;
-    color: greenyellow;
-    box-shadow: 0 0 0 2px greenyellow;
-    cursor: pointer;
-    overflow: hidden;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  
-  .animated-button svg {
-    position: absolute;
-    width: 24px;
-    fill: greenyellow;
-    z-index: 9;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  
-  .animated-button .arr-1 {
-    right: 16px;
-  }
-  
-  .animated-button .arr-2 {
-    left: -25%;
-  }
-  
-  .animated-button .circle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20px;
-    height: 20px;
-    background-color: greenyellow;
-    border-radius: 50%;
-    opacity: 0;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  
-  .animated-button .text {
-    position: relative;
-    z-index: 1;
-    transform: translateX(-12px);
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  
-  .animated-button:hover {
-    box-shadow: 0 0 0 12px transparent;
-    color: #212121;
-    border-radius: 12px;
-  }
-  
-  .animated-button:hover .arr-1 {
-    right: -25%;
-  }
-  
-  .animated-button:hover .arr-2 {
-    left: 16px;
-  }
-  
-  .animated-button:hover .text {
-    transform: translateX(12px);
-  }
-  
-  .animated-button:hover svg {
-    fill: #212121;
-  }
-  
-  .animated-button:active {
-    scale: 0.95;
-    box-shadow: 0 0 0 4px greenyellow;
-  }
-  
-  .animated-button:hover .circle {
-    width: 220px;
-    height: 220px;
-    opacity: 1;
-  }
-
-  body, html {
+/* Basic reset for styling */
+* {
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, #0a2e38, #000000); /* Dark blue gradient for the entire page */
-    color: white; /* Ensures text visibility */
-    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
 }
 
-.header-gradient {
-    background: linear-gradient(to right, #0a2e38, #000000); /* Aesthetic gradient for the header */
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background: #FFF9E6; /* soft yellow background, as previously liked */
+    color: #333; /* general text color */
+    scroll-behavior: smooth; /* smooth scrolling */
+}
+
+header {
+    background: linear-gradient(145deg, #FFD700, #FFA500); /* gradient from yellow to a deep orange */
+    color: white;
+    text-align: center;
     padding: 20px 0;
+    position: sticky; /* Ensures the header stays at the top of the viewport */
+    top: 0;
+    z-index: 1000;
+    width: 100%; /* Full width */
+}
+
+.header-title {
+    text-align: center;
+    font-size: 2.5em; /* Big, noticeable font size */
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive; /* Fun, casual font */
+    color: #084c84; /* Deep blue for the title */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Text shadow for depth */
+    padding: 10px 0; /* Space above and below the title */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0; /* Removes default padding */
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    color: #FFFAF0; /* lighter shade of yellow for hover/focus */
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    border-bottom: 5px solid #FFD700; /* vivid yellow border to separate sections */
+}
+
+footer {
+    background: #1E90FF; /* vivid blue, removed from large sections if not desired */
+    color: white;
+    padding: 10px 0;
     text-align: center;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center; /* Centers the navigation horizontally */
-}
-
-li {
-    margin: 0 10px;
+/* Adding subtle shadows to the header and footer for depth */
+header, footer {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 
-  
+@keyframes zoomOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: translateX(100vw) scale(0.5); /* Starts from right and zoomed out */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+/* Applying animations to sections */
+section {
+    animation: zoomIn 0.5s ease-out forwards; /* Adjust timing as needed */
+}
+
+
+.decorative-line {
+    height: 2px;
+    background-color: #64ffda; /* Vibrant green line */
+    width: 100%; /* Full width */
+    margin: 20px 0;
+}
+
+
